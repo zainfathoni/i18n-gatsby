@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "scripts": {
     "start": "mdx-deck deck.mdx",
@@ -10,5 +10,6 @@
     "code-surfer": "3.0.0-beta.1",
     "mdx-deck": "3.0.13"
   },
-  "name": "i18n-gatsby"
+  "name": "i18n-gatsby",
+  "description": "🌏 Navigating i18n in SEA with Gatsby"
 }
