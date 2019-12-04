@@ -379,10 +379,24 @@ exports.onCreatePage = ({ page, actions }) => {
   <Appear>
     <li>✨ Using <a href="https://www.gatsbyjs.org/docs/node-apis/#onCreatePage"><code>onCreatePage</code></a> Node API</li>
     <li>🚫 No reexecuting JavaScript files</li>
-    <li>🖨 Only copying the page object to create additional pages</li>
+    <li>📑 Only copying the created page objects</li>
     <li class='image'>
       <Image src={buildAfter} style={{ backgroundSize: 'contain', height: '20vh', width: '80vw' }} />
     </li>
     <li>✅ <strong>~78 seconds</strong> for building <strong>138 HTML pages</strong> ✅</li>
+  </Appear>
+</ul>
+
+---
+
+# 🔑 Key Takeaway
+
+<ul>
+  <Appear>
+    <li>⚖️ It doesn't mean that <a href="https://github.com/angeloocana/gatsby-plugin-i18n"><code>gatsby-plugin-i18n</code></a> is bad</li>
+    <li>🦾 It's still pretty <strong>useful</strong> for some use cases<br />📑 e.g. using different layouts for each language</li>
+    <li>☝🏼 <strong>Do not take</strong> any Gatsby plugins <strong>for granted</strong></li>
+    <li>📈 <strong>Evaluate</strong> build and runtime performance continuously</li>
+    <li>💪🏼 Do not afraid to implement features <strong>from scratch</strong></li>
   </Appear>
 </ul>
