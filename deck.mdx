@@ -11,6 +11,8 @@ import './styles.css'
 import gatsbyI18nStarter from './images/gatsby-i18n-starter.png'
 import gatsbyPluginI18n from './images/gatsby-plugin-i18n.png'
 import howItWorks from './images/how-it-works.png'
+import buildBefore from './images/build-before.png'
+import buildAfter from './images/build-after.png'
 
 export const themes = [nightOwl, customTheme];
 
@@ -250,7 +252,7 @@ export default Page
     <li>✨ Luckily, we are in the open source world!</li>
     <li>🔬 I tried reverse engineering the plugin</li>
     <li>💡 Apparently, we only needed a small part of it</li>
-    <li>⌨️ Let's implement it from scratch!</li>
+    <li>🧩 Let's implement it from scratch!</li>
     <li>📝 We're gonna use <a href="https://www.gatsbyjs.org/docs/node-apis/#onCreatePage"><code>onCreatePage</code></a> Node API</li>
   </Appear>
 </ul>
@@ -349,3 +351,38 @@ exports.onCreatePage = ({ page, actions }) => {
 ```
 
 </CodeSurfer>
+
+---
+
+# ⚖️ Compare Build Performance ⚖️
+
+---
+
+# 🔴 Old Implementation
+
+<ul class='center'>
+  <Appear>
+    <li>✌🏼 Using <a href="https://github.com/angeloocana/gatsby-plugin-i18n"><code>gatsby-plugin-i18n</code></a> with only <strong>2 pages</strong> localized</li>
+    <li>🧮 That means <strong>18 JavaScript files</strong> executed for nothing</li>
+    <li class='image'>
+      <Image src={buildBefore} style={{ backgroundSize: 'contain', height: '20vh', width: '80vw' }} />
+    </li>
+    <li>❗️ <strong>~163 seconds</strong> for building <strong>39 HTML pages</strong> ❗️</li>
+  </Appear>
+</ul>
+
+---
+
+# 🟢 New Implementation
+
+<ul class='center'>
+  <Appear>
+    <li>✨ Using <a href="https://www.gatsbyjs.org/docs/node-apis/#onCreatePage"><code>onCreatePage</code></a> Node API</li>
+    <li>🚫 No reexecuting JavaScript files</li>
+    <li>🖨 Only copying the page object to create additional pages</li>
+    <li class='image'>
+      <Image src={buildAfter} style={{ backgroundSize: 'contain', height: '20vh', width: '80vw' }} />
+    </li>
+    <li>✅ <strong>~78 seconds</strong> for building <strong>138 HTML pages</strong> ✅</li>
+  </Appear>
+</ul>
