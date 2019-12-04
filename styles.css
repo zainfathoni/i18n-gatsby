@@ -12,3 +12,12 @@
 #___gatsby .cs-subtitle > span {
   font-family: "Nunito", system-ui, sans-serif;
 }
+
+#___gatsby li {
+  line-height: 2;
+  list-style-type: none;
+}
+
+#___gatsby ul.center li {
+  text-align: center;
+}

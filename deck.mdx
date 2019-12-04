@@ -1,3 +1,4 @@
+import { Appear, Image } from 'mdx-deck'
 import {
   CodeSurfer,
   CodeSurferColumns,
@@ -6,6 +7,8 @@ import {
 import { github, nightOwl } from "@code-surfer/themes";
 import customTheme from './theme'
 import './styles.css'
+
+import gatsbyI18nStarter from './gatsby-i18n-starter.png'
 
 export const themes = [nightOwl, customTheme];
 
@@ -16,6 +19,34 @@ export const themes = [nightOwl, customTheme];
 [@zainfathoni](https://twitter.com/zainfathoni)
 
 [www.zainfathoni.com](https://www.zainfathoni.com)
+
+---
+
+# 😫 Problems
+
+<ul>
+  <Appear>
+    <li>🇮🇩 Ninja 🇲🇾 Van 🇹🇭 serves 🇵🇭 <a href="https://www.ninjavan.co/en-sg/international-deliveries">6 🇻🇳 countries</a> 🇸🇬</li>
+    <li>🌐 Some of them have low <a href="https://www.ef.sg/epi/regions/asia/">English literacy</a></li>
+    <li>🧐 Google needs <a href="https://support.google.com/webmasters/answer/182192?hl=en">different URLs</a> for different languages</li>
+  </Appear>
+</ul>
+
+---
+
+# 💡 Solution
+
+<ul class='center'>
+  <Appear>
+    <li>🛠 Since we're using Gatsby</li>
+    <li>🚀 Why don't we pick a relevant starter?</li>
+    <li>
+      <a href="https://www.gatsbyjs.org/starters/smakosh/gatsby-starter-i18n/">
+        <Image src={gatsbyI18nStarter} style={{ backgroundSize: 'contain', height: '50vh', width: '80vw' }} />
+      </a>
+    </li>
+  </Appear>
+</ul>
 
 ---
 
