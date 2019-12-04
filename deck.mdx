@@ -241,3 +241,111 @@ export default Page
 
 </CodeSurfer>
 
+---
+
+# 🕵🏻‍♂️ There must be another way
+
+<ul>
+  <Appear>
+    <li>✨ Luckily, we are in the open source world!</li>
+    <li>🔬 I tried reverse engineering the plugin</li>
+    <li>💡 Apparently, we only needed a small part of it</li>
+    <li>⌨️ Let's implement it from scratch!</li>
+    <li>📝 We're gonna use <a href="https://www.gatsbyjs.org/docs/node-apis/#onCreatePage"><code>onCreatePage</code></a> Node API</li>
+  </Appear>
+</ul>
+
+---
+
+<CodeSurfer>
+
+```js title="gatsby-node.js" subtitle="onCreatePage() receives page & actions properties"
+exports.onCreatePage = ({ page, actions }) => {
+
+}
+```
+
+```js title="gatsby-node.js" subtitle="Import list of locales we serve"
+const { locales } = require('./src/data/config')
+
+exports.onCreatePage = ({ page, actions }) => {
+
+}
+```
+
+```js title="gatsby-node.js" subtitle="Loop on the locales"
+const { locales } = require('./src/data/config')
+
+exports.onCreatePage = ({ page, actions }) => {
+  const skip = false // TODO: Skip unnecessary pages
+  if (!skip) {
+    locales.forEach(locale => {
+      // TODO: Copy to all supported locales
+    })
+  }
+}
+```
+
+```js title="gatsby-node.js" subtitle="Clone the page object"
+const { locales } = require('./src/data/config')
+
+exports.onCreatePage = ({ page, actions }) => {
+  const skip = false // TODO: Skip unnecessary pages
+  if (!skip) {
+    locales.forEach(locale => {
+      const newPage = Object.assign({}, page)
+    })
+  }
+}
+```
+
+```js title="gatsby-node.js" subtitle="Insert the /locale/ path into the first segment of the URL"
+const { locales } = require('./src/data/config')
+
+exports.onCreatePage = ({ page, actions }) => {
+  const skip = false // TODO: Skip unnecessary pages
+  if (!skip) {
+    locales.forEach(locale => {
+      const newPage = Object.assign({}, page)
+      newPage.path = page.path.replace(/^\//, `/${locale}/`)
+    })
+  }
+}
+```
+
+```js title="gatsby-node.js" subtitle="Call createPage() to create the new page"
+const { locales } = require('./src/data/config')
+
+exports.onCreatePage = ({ page, actions }) => {
+  const skip = false // TODO: Skip unnecessary pages
+  if (!skip) {
+    locales.forEach(locale => {
+      const newPage = Object.assign({}, page)
+      newPage.path = page.path.replace(/^\//, `/${locale}/`)
+      actions.createPage(newPage)
+    })
+  }
+}
+```
+
+```js title="gatsby-node.js" subtitle="Skip unnecessary pages"
+const { locales } = require('./src/data/config')
+const isIndexPage = (page, locale) => page.path === `/${locale}`
+const is404Page = page => page.path.startsWith('/404')
+
+exports.onCreatePage = ({ page, actions }) => {
+  const skip = locales.some(locale => isIndexPage(page, locale)) || is404Page(page)
+  if (!skip) {
+    locales.forEach(locale => {
+      const newPage = Object.assign({}, page)
+      newPage.path = page.path.replace(/^\//, `/${locale}/`)
+      actions.createPage(newPage)
+    })
+  }
+}
+```
+
+```diff title="gatsby-node.js" subtitle="💯 That's it!"
+```
+
+</CodeSurfer>
