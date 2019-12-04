@@ -1,0 +1,14 @@
+#___gatsby h1,
+#___gatsby h2,
+#___gatsby h3,
+#___gatsby h4,
+#___gatsby ul,
+#___gatsby th,
+#___gatsby td,
+#___gatsby a,
+#___gatsby del,
+#___gatsby p,
+#___gatsby .cs-title > span,
+#___gatsby .cs-subtitle > span {
+  font-family: "Nunito", system-ui, sans-serif;
+}
