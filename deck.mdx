@@ -10,6 +10,7 @@ import './styles.css'
 
 import gatsbyI18nStarter from './gatsby-i18n-starter.png'
 import gatsbyPluginI18n from './gatsby-plugin-i18n.png'
+import howItWorks from './how-it-works.png'
 
 export const themes = [nightOwl, customTheme];
 
@@ -41,7 +42,7 @@ export const themes = [nightOwl, customTheme];
   <Appear>
     <li>🛠 Since we're using Gatsby</li>
     <li>🚀 Why don't we pick a relevant starter?</li>
-    <li>
+    <li class='image'>
       <a href="https://www.gatsbyjs.org/starters/smakosh/gatsby-starter-i18n/">
         <Image src={gatsbyI18nStarter} style={{ backgroundSize: 'contain', height: '50vh', width: '80vw' }} />
       </a>
@@ -57,9 +58,25 @@ export const themes = [nightOwl, customTheme];
   <Appear>
     <li>😢 But it doesn't differentiate URLs on different languages</li>
     <li>🔌 Pick an officially recommended plugin for that</li>
-    <li>
+    <li class='image'>
       <a href="https://www.gatsbyjs.org/docs/localization-i18n/#gatsby-plugin-i18n">
         <Image src={gatsbyPluginI18n} style={{ backgroundSize: 'contain', height: '50vh', width: '80vw' }} />
+      </a>
+    </li>
+  </Appear>
+</ul>
+
+---
+
+# 🛠 Configure
+
+<ul class='center'>
+  <Appear>
+    <li>🔨 Name your files with <code>.<strong>langKey</strong>.js</code></li>
+    <li>🔧 the url will be <code>/<strong>langKey</strong>/path/fileName</code></li>
+    <li class='image'>
+      <a href="https://github.com/angeloocana/gatsby-plugin-i18n#how-it-works">
+        <Image src={howItWorks} style={{ backgroundSize: 'contain', height: '50vh', width: '80vw' }} />
       </a>
     </li>
   </Appear>

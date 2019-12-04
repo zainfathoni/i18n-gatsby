@@ -21,3 +21,7 @@
 #___gatsby ul.center li {
   text-align: center;
 }
+
+#___gatsby ul.center li.image {
+  margin-top: 1em;
+}
