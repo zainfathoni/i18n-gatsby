@@ -4,6 +4,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
+    "postbuild": "cp _redirects public/_redirects",
     "test": "echo \"there are no tests\""
   },
   "devDependencies": {
